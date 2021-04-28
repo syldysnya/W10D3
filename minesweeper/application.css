@@ -1,0 +1,10 @@
+
+.tile-row {
+  display: flex;
+}
+
+.tile {
+  display: block; 
+  background-color: gray;
+  
+}
