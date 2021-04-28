@@ -1,1 +1,82 @@
 /* PHASE 12: Modal */
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal-screen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-form {
+    position: absolute;
+    left: 50%;
+    margin-left: -190px;
+    background-color: white;
+    z-index: 3;
+    top: 100px;
+    border-radius: 10px;
+    width: 360px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.modal-form header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 42px;
+    font-weight: 300;
+}
+
+.modal-form input {
+    border: 1px solid rgba(126, 126, 126, 0.3);
+    border-radius: 5px;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit p {
+    margin: 10px;
+}
+
+.submit > .cancel {
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+    padding: 0;
+}
+
+.submit > .cancel:hover {
+    color: red;
+    background-color: transparent;
+}
+
+.signin-form > label {
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+.signin-form > * {
+    padding: 2px;
+}
+
+.modal-close:hover {
+    color: red;
+    cursor: pointer;
+}
