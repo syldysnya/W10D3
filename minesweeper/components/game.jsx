@@ -12,7 +12,7 @@ export default class Game extends React.Component {
     this.updateGame = this.updateGame.bind(this);
   }
 
-  updateGame() {
+  updateGame(tile, flagging) {
     
   }
   

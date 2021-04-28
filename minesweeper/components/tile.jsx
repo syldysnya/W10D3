@@ -7,8 +7,8 @@ export default class Tile extends React.Component {
     }
 
     handleClick(e) {
-        e.preventDefault; 
-        return <div onClick={this.props.updateGame}></div>
+        e.preventDefault;
+        this.props.updateGame(e.target, e.altKey);
     }
 
     render() {   
@@ -17,11 +17,11 @@ export default class Tile extends React.Component {
         let content;
         
         if (tile.explored && count > 0) {
-            content = <div className="tile explored">{count}</div>
+            content = <div onClick={this.handleClick} className="tile explored">{count}</div>
         } else if (tile.flagged) {
-            content = <div className="tile flagged">&#x2691;</div>
+            content = <div onClick={this.handleClick} className="tile flagged">&#x2691;</div>
         } else {
-            content = <div className="tile unexplored"></div>
+            content = <div onClick={this.handleClick} className="tile unexplored"></div>
         }
         
         return content; 
