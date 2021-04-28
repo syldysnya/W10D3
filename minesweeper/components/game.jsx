@@ -13,12 +13,32 @@ export default class Game extends React.Component {
   }
 
   updateGame(tile, flagging) {
-    
+    if (flagging) {
+      tile.toggleFlag(); 
+    } else {
+      tile.explore(); 
+    }
+
+    this.setState( { board: this.state.board } );
   }
   
   render() {
+    // if lost or won 
+    // content = something
+    // else 
+    // content = 
+
+    let content = null; 
+
+    if (this.state.board.lost) {
+      content = alert("you've lost");
+    } if (this.state.board.won) {
+      content = alert("you've won");
+    }
+
     return (
       <div>
+        {content}
         <Board board={this.state.board} updateGame={this.updateGame}/>
       </div>
     )

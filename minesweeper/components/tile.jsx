@@ -8,7 +8,7 @@ export default class Tile extends React.Component {
 
     handleClick(e) {
         e.preventDefault;
-        this.props.updateGame(e.target, e.altKey);
+        this.props.updateGame(this.props.tile, e.altKey);
     }
 
     render() {   
