@@ -22,27 +22,36 @@ export default class Game extends React.Component {
 
     this.setState( { board: this.state.board } );
   }
+
+  restartGame() {
+    this.setState( { board: new Minesweeper.Board(9, 10) } )
+  }
+
   
   render() {
+    let text = null; 
 
+    const lost = this.state.board.lost();
+    const won = this.state.board.won();
     let content = null;
-    
 
-    if (this.state.board.lost()) {
-      text = <h3>you've lost</h3>;
-    } if (this.state.board.won()) {
-      text = <h3>you've won</h3>;
+    if (lost) {
+      text = <h3>Next time's a charm!</h3>;
+    } if (won) {
+      text = <h3>You won!!</h3>;
     }
 
-    content = (
-      <aside className="modal">
-        <div className="modal-screen"></div>
-        <div className="modal-form">
-          {text}
-          <button onClick={this.restartGame}>Play Again</button>
-        </div>
-      </aside>
-    )
+    if (lost || won) {
+      content = (
+        <aside className="modal">
+          <div className="modal-screen"></div>
+          <div className="modal-form">
+            {text}
+            <button onClick={this.restartGame}>Play Again</button>
+          </div>
+        </aside>
+      )
+    }
 
     return (
       <div>
