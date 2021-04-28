@@ -10,7 +10,7 @@ export const Tile = ({tile}) => {
     } else if (tile.flagged) {
         content = <div className="tile flagged">&#x2691;</div>
     } else {
-        content = <div className="tile unexplored">T</div>
+        content = <div className="tile unexplored"></div>
     }
 
     return content; 

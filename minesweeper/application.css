@@ -1,3 +1,17 @@
+:root {
+  --tile-gray: #c2bebe;
+  --tile-border-highlight: #e4e2e2;
+  --tile-border-lowlight: #868585;
+}
+
+.root > div {
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .tile-row {
   display: flex;
@@ -5,6 +19,21 @@
 
 .tile {
   display: block; 
-  background-color: gray;
-  
+  width: 30px;
+  height: 30px;
+  background-color: var(--tile-gray);
+}
+
+.tile.unexplored, .flagged {
+  border-top: 3px solid var(--tile-border-highlight);
+  border-left: 3px solid var(--tile-border-highlight);
+  border-right: 3px solid var(--tile-border-lowlight);
+  border-bottom: 3px solid var(--tile-border-lowlight);
+}
+
+.tile.explored {
+  border-top: inset 3px solid var(--tile-border-lowlight);
+  border-left: inset 3px solid var(--tile-border-lowlight);
+  border-right: inset 3px solid var(--tile-border-highlight);
+  border-bottom: inset 3px solid var(--tile-border-highlight);
 }
