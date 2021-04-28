@@ -18,6 +18,8 @@ export default class Tile extends React.Component {
         
         if (tile.explored && count > 0) {
             content = <div onClick={this.handleClick} className="tile explored">{count}</div>
+        } else if (tile.explored && tile.bombed) {
+            content = <div onClick={this.handleClick} className="tile bombed">&#128163;</div>
         } else if (tile.flagged) {
             content = <div onClick={this.handleClick} className="tile flagged">&#x2691;</div>
         } else {
